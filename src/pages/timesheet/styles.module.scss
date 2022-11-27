@@ -1,0 +1,144 @@
+@use '../../colors';
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  flex-grow: 1;
+
+  position: relative;
+  background: colors.$white-400;
+}
+
+.loading {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  z-index: 999;
+}
+
+.content {
+  flex-grow: 1;
+
+  align-self: center;
+  width: 90%;
+  height: 100%;
+
+  padding: 2rem 2rem;
+  margin-top: 2rem;
+
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card__container {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 1.5rem;
+}
+
+.welcome__text {
+  font-size: 1.5rem;
+  color: colors.$purple-300;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+.card {
+  flex: 1;
+  flex-basis: 280px;
+}
+
+.purple__text {
+  color: colors.$purple-400;
+}
+
+.red__text {
+  color: colors.$red-300;
+}
+
+.green__text {
+  color: colors.$green-400;
+}
+
+.blue__text {
+  color: colors.$blue-400;
+}
+
+.table__title {
+  margin-top: 4rem;
+  font-size: 1.5rem;
+  color: colors.$gray-600;
+}
+
+.table__wrapper {
+  overflow-x: auto;
+}
+
+.table__container {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+
+  th {
+    background-color: colors.$gray-400;
+    color: colors.$gray-700;
+    text-align: left;
+
+    &:first-child {
+      border-radius: 0.25rem 0 0 0.25rem;
+    }
+
+    &:last-child {
+      border-radius: 0 0.25rem 0.25rem 0;
+    }
+  }
+
+  tr {
+    white-space: nowrap;
+  }
+
+  td {
+    color: colors.$gray-600;
+  }
+
+  td,
+  th {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 2px solid white;
+    padding: 1.25rem;
+    max-width: 275px;
+
+    &:not(:last-child) {
+      border-right: 1px solid colors.$gray-500;
+    }
+  }
+
+  tbody tr:nth-child(even) td {
+    background: colors.$gray-400;
+
+    &:first-child {
+      border-radius: 0.25rem 0 0 0.25rem;
+    }
+
+    &:last-child {
+      border-radius: 0 0.25rem 0.25rem 0;
+    }
+  }
+
+  tbody tr:nth-child(odd) td {
+    background: colors.$gray-100;
+
+    &:first-child {
+      border-radius: 0.25rem 0 0 0.25rem;
+    }
+
+    &:last-child {
+      border-radius: 0 0.25rem 0.25rem 0;
+    }
+  }
+}
